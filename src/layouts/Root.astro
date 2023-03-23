@@ -138,13 +138,12 @@ const description = `${dayjs(eventDateTime).format(
         background-color: #f0f0f0;
       }
     }
-
     th,
     td {
       padding: 10px;
-      &:empty {
-        display: none;
-      }
+    }
+    th:empty {
+      display: none;
     }
 
     thead {
@@ -156,6 +155,7 @@ const description = `${dayjs(eventDateTime).format(
       border-bottom: 2px solid var(--primary-color);
     }
   }
+  
   a {
     color: var(--primary-color);
   }
