@@ -1,12 +1,13 @@
 ---
 import dayjs from "dayjs";
+import config from "../config";
 
 import Menu from "../components/Menu.astro";
 
-const eventDateTime = import.meta.env.PUBLIC_EVENT_DATETIME;
-const eventPlace = import.meta.env.PUBLIC_EVENT_PLACE;
-const eventKeyVisualAuthor = import.meta.env.PUBLIC_EVENT_KEYVISUAL_AUTHOR;
-const eventContent = import.meta.env.PUBLIC_EVENT_CONTENT;
+const eventDateTime = config.event.date;
+const eventPlace = config.event.place;
+const eventKeyVisualAuthor = config.event.keyVisualAuthor;
+const eventContent = config.event.content;
 ---
 
 <div class="sidebar">
