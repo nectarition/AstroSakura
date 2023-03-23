@@ -1,8 +1,9 @@
 ---
-title: 'detail'
+title: '開催概要'
 
+showMenu: true
+menuOrder: 10
+menuIcon: 'mdi:information'
 ---
 
-aaa
-
-こんにちは
+開催概要

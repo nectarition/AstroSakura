@@ -1,8 +1,9 @@
 ---
-title: 'join'
+title: 'サークル参加'
 
+showMenu: true
+menuOrder: 20
+menuIcon: 'mdi:book'
 ---
 
-aaa
-
-## あいうえお
+サークル参加

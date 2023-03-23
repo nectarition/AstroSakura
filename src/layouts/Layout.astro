@@ -1,17 +1,53 @@
 ---
 import Root from './Root.astro'
+import Sidebar from './Sidebar.astro'
+import Footer from './Footer.astro'
+
 export interface Props {
-	title?: string
+  title?: string
 }
 
 const { title } = Astro.props
 ---
 
 <Root title={title}>
-	<header>header</header>
-	<nav>sidebar</nav>
-	<main>
-		<slot />
-	</main>
-	<footer>footer</footer>
+  <div class="container">
+    <div class="content">
+      <nav>
+        <Sidebar />
+      </nav>
+      <main>
+        <slot />
+      </main>
+    </div>
+    <footer>
+      <Footer />
+    </footer>
+  </div>
 </Root>
+
+<style lang="scss">
+  .container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  .content {
+    padding: 40px 10%;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 40px;
+  }
+  nav {
+    align-self: flex-start;
+    position: sticky;
+    top: 40px;
+  }
+  main {
+    background-color: #ffffff;
+    padding: 40px;
+  }
+  footer {
+
+  }
+</style>

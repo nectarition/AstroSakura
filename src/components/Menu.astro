@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content'
+import { Sprite } from 'astro-icon'
+import MenuItem from './MenuItem.astro'
+
+const pages = await getCollection('pages', p => p.data.showMenu)
+const orderedPages = pages.sort((a, b) => ((a.data.menuOrder || 0) - (b.data.menuOrder || 9)))
+---
+
+<Sprite.Provider>
+  <div class="menu">
+    <MenuItem href="/" name="ホーム" icon="mdi:home" />
+    {orderedPages.map(p => p.data.menuIcon && <MenuItem href={p.slug} name={p.data.title} icon={p.data.menuIcon} />)}
+  </div>
+</Sprite.Provider>
+
+<style lang="scss">
+.menu {
+}
+</style>

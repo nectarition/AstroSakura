@@ -1,0 +1,52 @@
+---
+import Menu from "../components/Menu.astro";
+
+---
+
+<div class="sidebar">
+  <div class="meta">
+    <div class="meta_logotype">
+      <a href="/"><img class="logotype" src="/assets/logotype.svg" /></a>
+    </div>
+    <div class="meta_item meta_item-date">
+      2023.03.23
+    </div>
+    <div class="meta_item">
+      <span class="label">at</span>
+      ここには開催場所が入ります
+    </div>
+    <div class="meta_item">
+      <span class="label">Key-visual</span>
+      キービジュアル
+    </div>
+  </div>
+  <Menu />
+</div>
+
+<style lang="scss">
+.sidebar {
+}
+.meta {
+  margin-bottom: 20px;
+  
+  &_logotype {
+    margin-bottom: 10px;
+    .logotype {
+      width: 100%;
+    }
+  }
+  &_item {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    font-weight: bold;
+
+    &-date {
+      color: var(--primary-color);
+      font-size: 1.5em;
+    }
+  }
+}
+</style>

@@ -3,7 +3,7 @@ export interface Props {
   title?: string
 }
 
-const siteName = 'AstroSakura'
+const siteName = import.meta.env.PUBLIC_SITE_NAME
 const title = Astro.props.title ? `${Astro.props.title} - ${siteName}` : siteName
 ---
 
@@ -20,6 +20,79 @@ const title = Astro.props.title ? `${Astro.props.title} - ${siteName}` : siteNam
   </body>
 </html>
 
-<style is:global>
+<style is:global lang="scss">
+  @import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap";
   
+  * {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-color: #2d96b1;
+  }
+  html, body {  
+    height: 100%;
+  }
+
+  html, body,
+  p,
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: #f0f0f0;
+    background-image: url('/assets/components/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, table {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1 { font-size: 2em; }
+  h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+  }
+  h2 { font-size: 1.75em; }
+  h3 { font-size: 1.5em; }
+  h4 { font-size: 1.25em; }
+  h5 { font-size: 1em; }
+  h6 { font-size: 0.9em; }
+
+  table {
+    min-width: 50%;
+    max-width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+
+    tr:nth-child(2n) {
+      background-color: #f0f0f0;
+    }
+    th, td {
+      padding: 2px 5px;
+    }
+    
+    thead {
+      tr {
+        border-bottom: 1px solid var(--primary-color);
+      }
+    }
+    tbody {
+
+    }
+  }
+  .label {
+    padding: 0 2px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: bold;
+  }
 </style>

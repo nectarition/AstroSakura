@@ -1,0 +1,76 @@
+---
+import { Sprite } from 'astro-icon'
+
+interface Props {
+  name: string
+  icon: string
+  href: string
+}
+
+const { name, icon, href } = Astro.props
+---
+
+<a class="item" href={href}>
+  <span class="item_icon"><Sprite name={icon} /></span>
+  <span class="item_name">{ name }</span>
+</a>
+
+<style lang="scss">
+  .item {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    font-weight: bold;;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    
+    background-image: url('/assets/components/bg-colored.png');
+    background-color: #f0f0f0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    &_icon, &_name {
+      padding: 10px;
+    }
+
+    &_icon {
+      font-size: 0;
+      svg {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &_name {}
+
+    position: relative;
+
+    &::after {
+      display: block;
+      content: '';
+      width: 0;
+      height: 100%;
+      position: absolute;
+
+      background-color: var(--primary-color);
+      opacity: 10%;
+
+      transition: width ease 0.2s;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+</style>
