@@ -1,20 +1,78 @@
 ---
-import { getCollection } from 'astro:content'
-import { Sprite } from 'astro-icon'
-import MenuItem from './MenuItem.astro'
+import { getCollection } from "astro:content";
+import { Sprite } from "astro-icon";
+import MenuItem from "./MenuItem.astro";
 
-const pages = await getCollection('pages', p => p.data.showMenu)
-const orderedPages = pages.sort((a, b) => ((a.data.menuOrder || 0) - (b.data.menuOrder || 9)))
+const pages = await getCollection("pages", (p) => p.data.showMenu);
+const orderedPages = pages.sort(
+  (a, b) => (a.data.menuOrder || 0) - (b.data.menuOrder || 9)
+);
 ---
 
 <Sprite.Provider>
   <div class="menu">
-    <MenuItem href="/" name="ホーム" icon="mdi:home" />
-    {orderedPages.map(p => p.data.menuIcon && <MenuItem href={p.slug} name={p.data.title} icon={p.data.menuIcon} />)}
+    <div id="menuControl">
+      <MenuItem id="openMenu" name="メニュー" icon="mdi:menu" />
+      <MenuItem id="closeMenu" name="閉じる" icon="mdi:close" />
+    </div>
+    <div id="menuItems">
+      <MenuItem href="/" name="ホーム" icon="mdi:home" />
+      {
+        orderedPages.map(
+          (p) =>
+            p.data.menuIcon && (
+              <MenuItem
+                href={p.slug}
+                name={p.data.title}
+                icon={p.data.menuIcon}
+              />
+            )
+        )
+      }
+    </div>
   </div>
 </Sprite.Provider>
+<script lang="ts">
+  document.querySelector("#closeMenu").classList.add("hide");
 
+  document.querySelector("#openMenu").addEventListener("click", () => {
+    document.querySelector("#openMenu").classList.add("hide");
+    document.querySelector("#closeMenu").classList.remove("hide");
+    document.querySelector("#menuItems").classList.add("expanded");
+  });
+  document.querySelector("#closeMenu").addEventListener("click", () => {
+    document.querySelector("#openMenu").classList.remove("hide");
+    document.querySelector("#closeMenu").classList.add("hide");
+    document.querySelector("#menuItems").classList.remove("expanded");
+  });
+  document.querySelector("#menuItems");
+</script>
 <style lang="scss">
-.menu {
-}
+  .menu {
+  }
+  #menuControl {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: 840px) {
+    #menuItems {
+      display: block;
+    }
+    #menuControl {
+      display: none;
+    }
+  }
+</style>
+<style is:global lang="scss">
+  .expanded {
+    display: block !important;
+  }
+  .hide {
+    display: none;
+  }
+  #menuItems {
+    display: none;
+  }
 </style>

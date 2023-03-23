@@ -1,18 +1,19 @@
 ---
-import { Sprite } from 'astro-icon'
+import { Sprite } from "astro-icon";
 
 interface Props {
-  name: string
-  icon: string
-  href: string
+  id?: string;
+  name: string;
+  icon: string;
+  href?: string;
 }
 
-const { name, icon, href } = Astro.props
+const { id, name, icon, href } = Astro.props;
 ---
 
-<a class="item" href={href}>
+<a id={id} class="item" href={href}>
   <span class="item_icon"><Sprite name={icon} /></span>
-  <span class="item_name">{ name }</span>
+  <span class="item_name">{name}</span>
 </a>
 
 <style lang="scss">
@@ -22,14 +23,14 @@ const { name, icon, href } = Astro.props
       margin-bottom: 0;
     }
 
-    font-weight: bold;;
+    font-weight: bold;
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
 
     display: grid;
     grid-template-columns: 32px 1fr;
-    
-    background-image: url('/assets/components/bg-colored.png');
+
+    background-image: url("/assets/components/bg-colored.png");
     background-color: #f0f0f0;
     background-position: center;
     background-size: cover;
@@ -38,7 +39,8 @@ const { name, icon, href } = Astro.props
     cursor: pointer;
     text-decoration: none;
 
-    &_icon, &_name {
+    &_icon,
+    &_name {
       padding: 10px;
     }
 
@@ -50,13 +52,14 @@ const { name, icon, href } = Astro.props
         height: 24px;
       }
     }
-    &_name {}
+    &_name {
+    }
 
     position: relative;
 
     &::after {
       display: block;
-      content: '';
+      content: "";
       width: 0;
       height: 100%;
       position: absolute;
