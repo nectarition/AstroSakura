@@ -142,6 +142,9 @@ const description = `${dayjs(eventDateTime).format(
     th,
     td {
       padding: 10px;
+      &:empty {
+        display: none;
+      }
     }
 
     thead {
