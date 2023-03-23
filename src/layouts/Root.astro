@@ -134,7 +134,6 @@ const description = `${dayjs(eventDateTime).format(
     text-align: left;
 
     tr {
-      background-color: #e0e0e0;
       &:nth-child(2n) {
         background-color: #f0f0f0;
       }
@@ -151,6 +150,7 @@ const description = `${dayjs(eventDateTime).format(
       }
     }
     tbody {
+      border-bottom: 2px solid var(--primary-color);
     }
   }
   a {

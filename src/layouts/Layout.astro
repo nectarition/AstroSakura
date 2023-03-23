@@ -56,7 +56,12 @@ const { title } = Astro.props;
   main {
     background-color: #ffffff;
     padding: 40px;
+
+    @media screen and (max-width: 840px) {
+      padding: 10px;
+    }
   }
+  
   footer {
   }
 </style>
