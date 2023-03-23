@@ -22,7 +22,7 @@ const orderedPages = pages.sort(
           (p) =>
             p.data.menuIcon && (
               <MenuItem
-                href={p.slug}
+                href={`/${p.slug}`}
                 name={p.data.title}
                 icon={p.data.menuIcon}
               />
