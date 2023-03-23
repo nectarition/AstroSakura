@@ -12,8 +12,8 @@ const orderedPages = pages.sort(
 <Sprite.Provider>
   <div class="menu">
     <div id="menuControl">
-      <MenuItem id="openMenu" name="メニュー" icon="mdi:menu" />
-      <MenuItem id="closeMenu" name="閉じる" icon="mdi:close" />
+      <MenuItem id="openMenu" name="メニュー" icon="mdi:menu" single />
+      <MenuItem id="closeMenu" name="閉じる" icon="mdi:close" single />
     </div>
     <div id="menuItems">
       <MenuItem href="/" name="ホーム" icon="mdi:home" />
@@ -50,12 +50,11 @@ const orderedPages = pages.sort(
 <style lang="scss">
   .menu {
   }
-  #menuControl {
-    margin-bottom: 10px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+
+  #menuItems {
+    margin-top: 10px;
   }
+
   @media screen and (min-width: 840px) {
     #menuItems {
       display: block;
@@ -69,9 +68,15 @@ const orderedPages = pages.sort(
   .expanded {
     display: block !important;
   }
+
   .hide {
     display: none;
   }
+
+  .single {
+    margin-bottom: 0;
+  }
+
   #menuItems {
     display: none;
   }

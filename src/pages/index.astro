@@ -1,11 +1,11 @@
 ---
 import { getEntryBySlug } from "astro:content";
-import Layout from "../layouts/Layout.astro";
+import HeroLayout from "../layouts/HeroLayout.astro";
 
 const page = await getEntryBySlug("pages", "index");
 const { Content } = await page.render();
 ---
 
-<Layout>
+<HeroLayout>
   <Content />
-</Layout>
+</HeroLayout>

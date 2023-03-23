@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "astro": "^2.1.5",
-    "astro-icon": "^0.8.0"
+    "astro-icon": "^0.8.0",
+    "dayjs": "^1.11.7"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^0.4.4",

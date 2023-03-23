@@ -6,4 +6,4 @@ title: 'ホーム'
 # menuIcon: 'mdi:link-variant'
 ---
 
-ホーム
+[ホーム](#)

@@ -1,5 +1,12 @@
 ---
+import dayjs from "dayjs";
+
 import Menu from "../components/Menu.astro";
+
+const eventDateTime = import.meta.env.PUBLIC_EVENT_DATETIME;
+const eventPlace = import.meta.env.PUBLIC_EVENT_PLACE;
+const eventKeyVisualAuthor = import.meta.env.PUBLIC_EVENT_KEYVISUAL_AUTHOR;
+const eventContent = import.meta.env.PUBLIC_EVENT_CONTENT;
 ---
 
 <div class="sidebar">
@@ -7,14 +14,20 @@ import Menu from "../components/Menu.astro";
     <div class="meta_logotype">
       <a href="/"><img class="logotype" src="/assets/logotype.svg" /></a>
     </div>
-    <div class="meta_item meta_item-date">2023.03.23</div>
-    <div class="meta_item">
-      <span class="label">at</span>
-      ここには開催場所が入ります
+    <div class="meta_item meta_item-date">
+      {dayjs(eventDateTime).format("YYYY.MM.DD ddd.")}
     </div>
     <div class="meta_item">
-      <span class="label">Key-visual</span>
-      キービジュアル
+      <span class="label">at</span>
+      {eventPlace}
+    </div>
+    <div class="meta_item">
+      <span class="label">content</span>
+      {eventContent}
+    </div>
+    <div class="meta_item">
+      <span class="label">key-visual</span>
+      {eventKeyVisualAuthor}
     </div>
   </div>
   <Menu />

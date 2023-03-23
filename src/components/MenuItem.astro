@@ -6,12 +6,13 @@ interface Props {
   name: string;
   icon: string;
   href?: string;
+  single?: boolean;
 }
 
-const { id, name, icon, href } = Astro.props;
+const { id, name, icon, href, single } = Astro.props;
 ---
 
-<a id={id} class="item" href={href}>
+<a id={id} class={`item ${single && "single"}`} href={href}>
   <span class="item_icon"><Sprite name={icon} /></span>
   <span class="item_name">{name}</span>
 </a>
