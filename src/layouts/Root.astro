@@ -133,17 +133,21 @@ const description = `${dayjs(eventDateTime).format(
     border-collapse: collapse;
     text-align: left;
 
-    tr:nth-child(2n) {
-      background-color: #f0f0f0;
+    tr {
+      background-color: #e0e0e0;
+      &:nth-child(2n) {
+        background-color: #f0f0f0;
+      }
     }
+
     th,
     td {
-      padding: 2px 5px;
+      padding: 10px;
     }
 
     thead {
       tr {
-        border-bottom: 1px solid var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
       }
     }
     tbody {
