@@ -5,11 +5,11 @@ const config = {
     author: 'Nectarition'
   },
   event: {
-    name: 'AstroSakura',
+    name: '小春六花はヨーグルトが食べたい',
     date: '2023-06-18',
-    place: '開催場所',
-    keyVisualAuthor: 'キービジュアル',
-    content: 'イベント内容',
+    place: '池袋サンシャインシティ',
+    keyVisualAuthor: '佐野はじめ',
+    content: '小春六花プチオンリーイベント',
     twitterId: 'nct_kohatabe'
   }
 }
