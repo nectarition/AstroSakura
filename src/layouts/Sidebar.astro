@@ -6,7 +6,6 @@ import Menu from "../components/Menu.astro";
 
 const eventDateTime = config.event.date;
 const eventPlace = config.event.place;
-const eventKeyVisualAuthor = config.event.keyVisualAuthor;
 const eventContent = config.event.content;
 ---
 
@@ -25,10 +24,6 @@ const eventContent = config.event.content;
     <div class="meta_item">
       <span class="label">content</span>
       {eventContent}
-    </div>
-    <div class="meta_item">
-      <span class="label">key-visual</span>
-      {eventKeyVisualAuthor}
     </div>
   </div>
   <Menu />
