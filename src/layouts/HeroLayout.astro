@@ -42,10 +42,19 @@ const { title } = Astro.props;
     }
 
     .hero {
+      position: relative;
+      text-align: center;
+
       .heroImage {
         display: inline-block;
         background-color: #c0c0c0;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
+        max-height: 1080px;
+
+        @media screen and (max-width: 840px) {
+          max-height: unset;
+        }
       }
     }
   }
