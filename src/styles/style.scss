@@ -1,0 +1,63 @@
+.btn {
+  &_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  display: inline-block;
+  padding: 10px;
+
+  background-image: url("/assets/brand/components/bg-uncolored.png");
+  background-color: #f0f0f0;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: var(--primary-color);
+  font-weight: bold;
+
+  text-decoration: none;
+  
+  &-primary {
+    background-image: url("/assets/brand/components/bg-colored.png");
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+
+  &-info {
+    background-image: url("/assets/brand/components/bg-colored.png");
+    background-color: #00b3ff;
+    color: #ffffff;
+  }
+
+  &-success {
+    background-image: url("/assets/brand/components/bg-colored.png");
+    background-color: #2dd030;
+    color: #ffffff;
+  }
+
+  cursor: pointer;
+
+  position: relative;
+
+  &::after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #c0c0c0;
+    opacity: 20%;
+
+    transition: width ease 0.2s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}

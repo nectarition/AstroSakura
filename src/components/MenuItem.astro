@@ -1,5 +1,5 @@
 ---
-import { Sprite } from "astro-icon";
+import { Sprite } from 'astro-icon';
 
 interface Props {
   id?: string;
@@ -12,12 +12,12 @@ interface Props {
 const { id, name, icon, href, single } = Astro.props;
 ---
 
-<a id={id} class={`item ${single && "single"}`} href={href}>
-  <span class="item_icon"><Sprite name={icon} /></span>
-  <span class="item_name">{name}</span>
+<a id={id} class={`item ${single && 'single'}`} href={href}>
+  <span class='item_icon'><Sprite name={icon} /></span>
+  <span class='item_name'>{name}</span>
 </a>
 
-<style lang="scss">
+<style lang='scss'>
   .item {
     margin-bottom: 10px;
     &:last-child {
@@ -31,7 +31,7 @@ const { id, name, icon, href, single } = Astro.props;
     display: grid;
     grid-template-columns: 32px 1fr;
 
-    background-image: url("/assets/brand/components/bg-uncolored.png");
+    background-image: url('/assets/brand/components/bg-uncolored.png');
     background-color: #f0f0f0;
     background-position: center;
     background-size: cover;
@@ -60,13 +60,13 @@ const { id, name, icon, href, single } = Astro.props;
 
     &::after {
       display: block;
-      content: "";
+      content: '';
       width: 0;
       height: 100%;
       position: absolute;
 
       background-color: var(--primary-color);
-      opacity: 10%;
+      opacity: 30%;
 
       transition: width ease 0.2s;
     }
