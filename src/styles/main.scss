@@ -58,9 +58,13 @@ h6 {
 }
 h2 {
   font-size: 1.75em;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--primary-color);
 }
 h3 {
   font-size: 1.5em;
+  border-left: 8px solid #e0e0e0;
+  padding-left: 8px;
 }
 h4 {
   font-size: 1.25em;
