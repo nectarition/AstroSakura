@@ -10,7 +10,8 @@ const config = {
     place: '池袋サンシャインシティ',
     content: '小春六花プチオンリーイベント',
     twitterId: 'nct_kohatabe'
-  }
+  },
+  shouldShowNectaritionLogo: true
 }
 
 export default config
