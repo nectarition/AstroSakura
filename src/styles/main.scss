@@ -87,18 +87,18 @@ table {
       background-color: #f8f8f8;
     }
   }
+  
   th,
   td {
     padding: 10px;
   }
+
   th:empty {
     display: none;
   }
 
-  thead {
-    border-bottom: 2px solid var(--primary-color);
-  }
   tbody {
+    border-top: 2px solid var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
   }
 }
