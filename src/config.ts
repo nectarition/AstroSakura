@@ -1,15 +1,15 @@
 const config = {
-  siteUrl: 'https://kohatabe.jp',
+  siteUrl: 'https://nectarition.jp',
   copyright: {
-    year: 2021,
-    author: 'Nectarition'
+    year: 2020,
+    author: 'ねくたりしょん'
   },
   event: {
-    name: '小春六花はヨーグルトが食べたい',
-    date: '2023-06-18',
-    place: '池袋サンシャインシティ',
-    content: '小春六花プチオンリーイベント',
-    twitterId: 'nct_kohatabe'
+    name: 'AstroSakura',
+    date: '2020-12-14',
+    place: 'ねくたりしょん',
+    content: '芽宮ねい',
+    twitterId: 'nectarition'
   },
   shouldShowNectaritionLogo: true
 }
