@@ -5,7 +5,13 @@ const pageCollection = defineCollection({
     title: z.string(),
     showMenu: z.boolean().optional(),
     menuIcon: z.string().optional(),
-    menuOrder: z.number().optional()
+    menuOrder: z.number().optional(),
+    breadcrumbs: z
+      .array(z.object({
+        name: z.string(),
+        path: z.string()
+      }))
+      .optional()
   })
 })
 
