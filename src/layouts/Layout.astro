@@ -45,27 +45,23 @@ const { title } = Astro.props;
       gap: 20px;
     }
   }
+
   nav {
-    align-self: flex-start;
-    position: sticky;
-    top: 40px;
     @media screen and (max-width: 840px) {
       position: unset;
       margin-bottom: 20px;
     }
   }
-  main {
-    align-self: flex-start;
-    padding: 40px;
-    
-    background-color: #ffffff;
 
+  main {
+    padding: 40px;
+    background-color: #ffffff;
     @media screen and (max-width: 840px) {
       margin: -20px;
       padding: 20px;
+      min-height: 75vh;
     }
   }
-
   footer {
   }
 </style>
