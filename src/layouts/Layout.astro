@@ -5,12 +5,13 @@ import Footer from "./Footer.astro";
 
 export interface Props {
   title?: string;
+  noIndex?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, noIndex } = Astro.props;
 ---
 
-<Root title={title}>
+<Root title={title} noIndex={noIndex}>
   <div class="container">
     <div class="content">
       <nav>
