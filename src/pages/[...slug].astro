@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ArchiveAlert from "../components/ArchiveAlert.astro";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("pages", (p) => p.slug !== "index");
@@ -19,5 +20,6 @@ const { Content } = await post.render();
 <Layout title={post.data.title}>
   {post.data.breadcrumbs && <Breadcrumbs items={post.data.breadcrumbs} />}
   <h1>{post.data.title}</h1>
+  {post.data.isArchive && <ArchiveAlert />}
   <Content />
 </Layout>

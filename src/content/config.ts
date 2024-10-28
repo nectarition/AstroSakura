@@ -11,7 +11,8 @@ const pageCollection = defineCollection({
         name: z.string(),
         path: z.string()
       }))
-      .optional()
+      .optional(),
+    isArchive: z.boolean().optional(),
   })
 })
 
