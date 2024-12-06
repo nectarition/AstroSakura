@@ -11,7 +11,9 @@ const config = {
     content: '芽宮ねい',
     twitterId: 'nectarition'
   },
-  shouldShowNectaritionLogo: true
+  shouldShowNectaritionLogo: true,
+  ogpImagePath: '/assets/brand/icon.png',
+  twitterCardType: 'summary',
 }
 
 export default config
