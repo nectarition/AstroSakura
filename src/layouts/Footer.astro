@@ -2,7 +2,7 @@
 import config from "../config";
 const copyrightYear = config.copyright.year;
 const copyrightAuthor = config.copyright.author;
-const shouldShowNectaritionLogo = config.shouldShowNectaritionLogo ?? false;
+const showNectaritionLogo = config.showNectaritionLogo ?? false;
 ---
 
 <div class="footer">
@@ -14,9 +14,15 @@ const shouldShowNectaritionLogo = config.shouldShowNectaritionLogo ?? false;
       &copy; {copyrightYear}
       {copyrightAuthor}
     </p>
-    {shouldShowNectaritionLogo && <p class="logoArea">
-      <a href="https://nectarition.jp"><img class="logo" src="https://nectarition.jp/logo/footer.svg" /></a>
-    </p>}
+    {
+      showNectaritionLogo && (
+        <p class="logoArea">
+          <a href="https://nectarition.jp">
+            <img class="logo" src="https://nectarition.jp/logo/footer.svg" />
+          </a>
+        </p>
+      )
+    }
   </div>
 </div>
 
