@@ -6,6 +6,6 @@ const page = await getEntryBySlug("pages", "index");
 const { Content } = await page.render();
 ---
 
-<HeroLayout>
+<HeroLayout title={page.data.title}>
   <Content />
 </HeroLayout>

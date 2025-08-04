@@ -1,4 +1,5 @@
 ---
+import dayjs from "dayjs";
 import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
@@ -18,8 +19,38 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} noIndex={post.data.isArchive}>
-  {post.data.breadcrumbs && <Breadcrumbs items={post.data.breadcrumbs} />}
-  <h1>{post.data.title}</h1>
-  {post.data.isArchive && <ArchiveAlert />}
+  {post.data.breadcrumbs && (
+    <Breadcrumbs items={post.data.breadcrumbs} />
+  )}
+  {post.data.title && (
+    <div class="title">
+      <h1 class="pageTitle">{post.data.title}</h1>
+      {post.data.updatedAt && (
+        <div class="">
+          {dayjs(post.data.updatedAt).format("YYYY年 M月 D日")} 更新
+        </div>
+      )}
+    </div>
+  )}
+  {post.data.isArchive && (
+    <ArchiveAlert />
+  )}
   <Content />
 </Layout>
+
+<style lang="scss">
+  .title {
+    margin-bottom: 40px;
+    padding: 8px 0 15px;
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+  .pageTitle {
+    margin-bottom: 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--brand-darkgray-color);
+  }
+  .pageSubtitle {
+  }
+</style>

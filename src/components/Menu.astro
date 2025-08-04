@@ -23,7 +23,7 @@ const orderedPages = pages.sort(
             p.data.menuIcon && (
               <MenuItem
                 href={`/${p.slug}`}
-                name={p.data.title}
+                name={p.data.title ?? ''}
                 icon={p.data.menuIcon}
               />
             )
@@ -32,6 +32,7 @@ const orderedPages = pages.sort(
     </div>
   </div>
 </Sprite.Provider>
+
 <script lang="ts">
   document.querySelector("#closeMenu").classList.add("hide");
 
@@ -47,6 +48,7 @@ const orderedPages = pages.sort(
   });
   document.querySelector("#menuItems");
 </script>
+
 <style lang="scss">
   .menu {
   }
@@ -64,6 +66,7 @@ const orderedPages = pages.sort(
     }
   }
 </style>
+
 <style is:global lang="scss">
   .expanded {
     display: block !important;

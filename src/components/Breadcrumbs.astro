@@ -9,31 +9,30 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-{
-  (
-    <ul class="breadcrumbs">
-      {items.map((i) => (
-        <li>
-          <a href={i.path}>{i.name}</a>
-        </li>
-      ))}
-    </ul>
-  )
-}
+<ul class="breadcrumbs">
+  {items.map((i) => (
+    <li>
+      <a href={i.path}>{i.name}</a>
+    </li>
+  ))}
+</ul>
 
 <style lang="scss">
   .breadcrumbs {
     margin: 0;
     padding: 0;
-    margin-bottom: 5px;
-
+    margin-bottom: -10px;
     list-style: none;
 
     li {
       display: inline-block;
-      padding-right: 16px;
+      padding-right: 32px;
+      position: relative;
 
       &::after {
+        position: absolute;
+        bottom: 0.5em;
+        right: 14px;
         display: inline-block;
         content: "";
         width: 6px;
