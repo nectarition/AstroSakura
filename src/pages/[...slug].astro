@@ -1,5 +1,11 @@
 ---
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+dayjs.locale("ja");
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Asia/Tokyo");
 import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
@@ -27,7 +33,7 @@ const { Content } = await post.render();
       <h1 class="pageTitle">{post.data.title}</h1>
       {post.data.updatedAt && (
         <div class="">
-          {dayjs(post.data.updatedAt).format("YYYY年 M月 D日")} 更新
+          {dayjs(post.data.updatedAt).tz().format("YYYY年 M月 D日")} 更新
         </div>
       )}
     </div>
