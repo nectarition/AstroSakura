@@ -1,23 +1,16 @@
 .btn {
-  &_wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
   display: inline-block;
   padding: 10px;
-
   background-image: url("/assets/brand/components/bg-uncolored.png");
   background-color: #f0f0f0;
   background-position: center;
   background-repeat: no-repeat;
-
   color: var(--primary-color);
   font-weight: bold;
-
   text-decoration: none;
-  
+  cursor: pointer;
+  position: relative;
+
   &-primary {
     background-image: url("/assets/brand/components/bg-colored.png");
     background-color: var(--primary-color);
@@ -36,9 +29,11 @@
     color: #ffffff;
   }
 
-  cursor: pointer;
-
-  position: relative;
+  &_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
   &::after {
     display: block;

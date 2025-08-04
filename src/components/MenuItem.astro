@@ -40,6 +40,8 @@ const { id, name, icon, href, single } = Astro.props;
     cursor: pointer;
     text-decoration: none;
 
+    position: relative;
+
     &_icon,
     &_name {
       padding: 10px;
@@ -53,10 +55,9 @@ const { id, name, icon, href, single } = Astro.props;
         height: 24px;
       }
     }
+    
     &_name {
     }
-
-    position: relative;
 
     &::after {
       display: block;
