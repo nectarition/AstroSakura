@@ -10,17 +10,17 @@ const showNectaritionLogo = config.showNectaritionLogo ?? false;
     このイベントは、ファン個人が運営しております。キャラクター公式及びその関連企業様とは一切関係ございません。
   </p>
   <div class="brandArea">
-    <p>
+    <div class="copyright">
       &copy; {copyrightYear}
       {copyrightAuthor}
-    </p>
+    </div>
     {
       showNectaritionLogo && (
-        <p class="logoArea">
+        <div class="logoArea">
           <a href="https://nectarition.jp">
             <img class="logo" src="https://nectarition.jp/logo/footer.svg" />
           </a>
-        </p>
+        </div>
       )
     }
   </div>
@@ -37,15 +37,17 @@ const showNectaritionLogo = config.showNectaritionLogo ?? false;
       padding: 20px;
     }
     .brandArea {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
     }
-    .logoArea {
-      text-align: right;
-      .logo {
-        height: 32px;
-        filter: brightness(100%);
-      }
+    .copyright {
+      flex-grow: 1;
+    }
+    .logo {
+      width: 32px;
+      max-width: 32px;
+      filter: brightness(100%);
     }
   }
 </style>
