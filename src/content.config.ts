@@ -1,6 +1,8 @@
+import { glob } from 'astro/loaders'
 import { z, defineCollection } from 'astro:content'
 
-const pageCollection = defineCollection({
+const pages = defineCollection({
+  loader: glob({ pattern: ['**/*.md'], base: './src/content/pages' }),
   schema: z.object({
     title: z.string().optional(),
     showMenu: z.boolean().optional(),
@@ -18,5 +20,5 @@ const pageCollection = defineCollection({
 })
 
 export const collections = {
-  'pages': pageCollection
+  pages
 }

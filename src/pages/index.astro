@@ -1,9 +1,12 @@
 ---
-import { getEntryBySlug } from "astro:content";
 import HeroLayout from "../layouts/HeroLayout.astro";
+import { getEntry, render } from "astro:content";
 
-const page = await getEntryBySlug("pages", "index");
-const { Content } = await page.render();
+const page = await getEntry("pages", "index");
+if (!page) {
+  throw new Error("Page not found");
+}
+const { Content } = await render(page);
 ---
 
 <HeroLayout title={page.data.title}>

@@ -22,7 +22,7 @@ const orderedPages = pages.sort(
           (p) =>
             p.data.menuIcon && (
               <MenuItem
-                href={`/${p.slug}`}
+                href={`/${p.id}`}
                 name={p.data.title ?? ''}
                 icon={p.data.menuIcon}
               />
@@ -72,15 +72,15 @@ const orderedPages = pages.sort(
     display: block !important;
   }
 
-  .hide {
-    display: none;
-  }
-
   .single {
     margin-bottom: 0;
   }
 
   #menuItems {
     display: none;
+  }
+  
+  .hide {
+    display: none !important;
   }
 </style>

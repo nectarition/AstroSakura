@@ -6,22 +6,22 @@ dayjs.locale("ja");
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.tz.setDefault("Asia/Tokyo");
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import ArchiveAlert from "../components/ArchiveAlert.astro";
 
 export const getStaticPaths = async () => {
-  const posts = await getCollection("pages", (p) => p.slug !== "index");
+  const posts = await getCollection("pages", (p) => p.id !== "index");
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 };
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post)
 ---
 
 <Layout title={post.data.title} noIndex={post.data.isArchive}>
