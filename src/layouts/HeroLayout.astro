@@ -2,6 +2,7 @@
 import Root from "./Root.astro";
 import Sidebar from "./Sidebar.astro";
 import Footer from "./Footer.astro";
+import config from "../config"
 
 export interface Props {
   title?: string;
@@ -16,7 +17,7 @@ const { title } = Astro.props;
       <Sidebar />
     </nav>
     <div class="hero">
-      <img class="heroImage" src="/assets/brand/keyvisual.jpg" />
+      <img class="heroImage" src={config.keyVisualImagePath ?? "/assets/brand/keyvisual.jpg"} />
     </div>
   </div>
   <main class="main">

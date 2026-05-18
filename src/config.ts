@@ -14,6 +14,7 @@ const config = {
   showNectaritionLogo: true,
   ogpImagePath: '/assets/brand/icon.png',
   twitterCardType: 'summary',
+  keyVisualImagePath: '/assets/brand/keyvisual.jpg'
 }
 
 export default config
